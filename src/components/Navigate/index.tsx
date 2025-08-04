@@ -12,6 +12,10 @@ import Trending from "@/components/Navigate/components/Trending"
 import { FaXmark } from "react-icons/fa6"
 import { useMenuStore } from "@/store/navigateStore"
 
+import sale from '@/assets/lg/sale.png'
+
+
+
 const componentsMap = {
     Sale,
     "New in": NewIn,
@@ -24,6 +28,9 @@ const componentsMap = {
     Grooming,
     'Top Man': TopMan,
 };
+
+
+
 const menuItems = Object.keys(componentsMap)
 
 const index = () => {
@@ -50,8 +57,9 @@ const index = () => {
     <div className="bg-navigateBg">
       <div className="container relative">
       {openMenu && (
-        <div className="relative max-lg:fixed max-lg:bg-modalBg max-lg:top-0 max-lg:left-0 max-lg:w-full max-lg:h-screen">  
-        <div className="max-lg:fixed max-lg:top-0 max-lg:left-0 max-lg:flex max-lg:flex-col max-lg:items-start max-lg:w-72 max-lg:h-screen max-lg:bg-white max-lg:pt-3  max-xs:w-full">
+        <div className="relative max-lg:fixed max-lg:bg-modalBg max-lg:top-0 max-lg:left-0 max-lg:w-full max-lg:h-screen">                                   
+                                                                                                                                                              {/* bu yerda mt  */}
+        <div className="max-lg:fixed max-lg:top-0 max-lg:left-0 max-lg:flex max-lg:flex-col max-lg:items-start max-lg:w-72 max-lg:h-screen max-lg:bg-white max-lg:pt-10  max-xs:w-full max-lg:overflow-y-scroll">
           <button className="hidden max-lg:flex max-lg:absolute max-lg:right-0 max-lg:top-0 max-lg:p-2" onClick={() => setOpenMenu(false)}><FaXmark className="text-2xl"/></button>
           {menuItems.map((item) => (
             <button
@@ -59,7 +67,7 @@ const index = () => {
               onMouseEnter={handleEnter(item)}
               onMouseLeave={handleLeave(item)}
               className={`font-light text-sm px-3 py-3 transition-all duration-300 max-lg:bg-transparent
-              max-lg:py-4
+              max-lg:py-4 max-lg:w-full
                 ${
                   item === "Sale"
                     ? `skew-x-[-12deg] ${
@@ -75,7 +83,7 @@ const index = () => {
                 }
               `}
             >
-              <span className="inter max-lg:text-black">{item}</span>
+              <div className="flex items-center justify-between w-full border rounded-xl px-2 " ><span className="inter max-lg:text-black">{item}</span> <img src={sale} className="w-16 h-16" alt="" /></div>
             </button>
           ))}
         </div>

@@ -61,7 +61,7 @@ const SearchBar = () => {
               <img
                 src={logo}
                 alt="ASOS logo"
-                className="invert brightness-200 mx-5 w-20 h-6 "
+                className="invert brightness-200 ml-2 w-20 h-6 max-xs:w-16 max-xs:h-5 max-xs:ml-2"
               />
             </div>
 
