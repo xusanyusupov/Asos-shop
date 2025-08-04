@@ -54,7 +54,7 @@ const SearchBar = () => {
             id="one"
             className="w-full h-full flex items-center justify-between"
           >
-            <div className="flex items-center px-5 ">
+            <div className="flex items-center">
               <button className="hidden max-lg:block" onClick={() => setOpenMenu(true)}>
                 <HiBars3 className="text-white text-2xl" />
               </button>
@@ -92,10 +92,10 @@ const SearchBar = () => {
               />
               {
                         isSmallScreen ? (
-                        <a href="/dropdown-page">
+                        <a href="#">
                             <HiOutlineUser
                             onClick={() => setOpen(true)}
-                            className='text-xl text-white cursor-pointer max-lg:text-searchBarBg max-lg:text-2xl '
+                            className='text-xl text-white cursor-pointer max-lg:text-searchBarBg max-lg:text-2xl'
                             />
                         </a>
                         ) : (
